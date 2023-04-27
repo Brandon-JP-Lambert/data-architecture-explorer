@@ -211,6 +211,55 @@ erDiagram
 Write a python program that generates approximately 100 learners and dummy data based on the ER diagram. Use the OpenAI API to build prompts into the code that creates random but contextually appropriate content. Write the script to ensure that prompts don't produce very similar results.
 ```
 
+**Sample Output 3:**
+
+Here is a sample output for the script:
+
+Users:
+{'id': 1, 'email': 'johnsonmelissa@gmail.com', 'password': 'tR4y%gk2', 'firstName': 'Melissa', 'lastName': 'Johnson', 'userType': 'learner'}
+{'id': 2, 'email': 'sarah94@example.com', 'password': 'Z7^3wnNq', 'firstName': 'Sarah', 'lastName': 'Smith', 'userType': 'learner'}
+... (omitted for brevity)
+
+Course Categories:
+{'id': 1, 'name': 'Optimized heuristic infrastructure', 'description': 'Incididunt veniam officia aliquip...'}
+{'id': 2, 'name': 'Reactive uniform flexibility', 'description': 'Elit minim ut tempor...'}
+... (omitted for brevity)
+
+Courses:
+{'id': 1, 'title': 'Mastering Web Development', 'description': 'Learn the fundamentals of web...', 'categoryId': 2, 'instructorId': 43}
+{'id': 2, 'title': 'Intro to Python Programming', 'description': 'Discover the basics of Python...', 'categoryId': 4, 'instructorId': 27}
+... (omitted for brevity)
+
+Lessons:
+{'id': 1, 'title': 'HTML Basics', 'content': 'HTML stands for Hyper Text...', 'courseId': 1}
+{'id': 2, 'title': 'Python Variables and Data Types', 'content': 'In this lesson, we will...', 'courseId': 2}
+... (omitted for brevity)
+
+Enrollments:
+{'id': 1, 'userId': 67, 'courseId': 6, 'enrolledAt': '2021-08-15'}
+{'id': 2, 'userId': 12, 'courseId': 14, 'enrolledAt': '2021-04-23'}
+... (omitted for brevity)
+
+Assessments:
+{'id': 1, 'type': 'multiple_choice', 'question': 'Which of the following is a...', 'correctAnswer': 'paragraph', 'lessonId': 1}
+{'id': 2, 'type': 'true_false', 'question': 'Python is a case-sensitive...', 'correctAnswer': 'True', 'lessonId': 2}
+... (omitted for brevity)
+
+Submissions:
+{'id': 1, 'userId': 54, 'assessmentId': 1, 'userAnswer': 'section', 'isCorrect': False, 'submittedAt': '2021-12-07'}
+{'id': 2, 'userId': 29, 'assessmentId': 2, 'userAnswer': 'True', 'isCorrect': True, 'submittedAt': '2021-03-15'}
+... (omitted for brevity)
+
+Discussion Forums:
+{'id': 1, 'courseId': 1, 'title': 'HTML and CSS Help'}
+{'id': 2, 'courseId': 2, 'title': 'Python Troubleshooting'}
+... (omitted for brevity)
+
+Forum Posts:
+{'id': 1, 'userId': 17, 'forumId': 1, 'content': 'Can anyone help me with...', 'postedAt': '2021-05-20'}
+{'id': 2, 'userId': 42, 'forumId': 2, 'content': 'How do I create a list in...', 'postedAt': '2021-07-14'}
+... (omitted for brevity
+
 ## Usage
 
 This tool is designed to be used with generative text tools like ChatGPT. Simply edit the prompts with your requirements, and the prompt will generate the Mermaid syntax for the ER diagram and Python code for dummy data.
