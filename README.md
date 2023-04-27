@@ -208,13 +208,14 @@ erDiagram
 **Sample Prompt 3:**
 
 ```
-Write a python program that generates approximately 100 learners and dummy data based on the ER diagram. Use the OpenAI API to build prompts into the code that creates random but contextually appropriate content. Write the script to ensure that prompts don't produce very similar results.
+Write a python script that generates approximately 100 learners and dummy data based on the ER diagram. Use the OpenAI API to build prompts into the code that creates random but contextually appropriate content. Write the script to ensure that prompts don't produce very similar results.
 ```
 
 **Sample Output 3:**
 
 Here is a sample output for the script:
 
+```
 Users:
 {'id': 1, 'email': 'johnsonmelissa@gmail.com', 'password': 'tR4y%gk2', 'firstName': 'Melissa', 'lastName': 'Johnson', 'userType': 'learner'}
 {'id': 2, 'email': 'sarah94@example.com', 'password': 'Z7^3wnNq', 'firstName': 'Sarah', 'lastName': 'Smith', 'userType': 'learner'}
@@ -259,6 +260,7 @@ Forum Posts:
 {'id': 1, 'userId': 17, 'forumId': 1, 'content': 'Can anyone help me with...', 'postedAt': '2021-05-20'}
 {'id': 2, 'userId': 42, 'forumId': 2, 'content': 'How do I create a list in...', 'postedAt': '2021-07-14'}
 ... (omitted for brevity
+```
 
 ## Usage
 
