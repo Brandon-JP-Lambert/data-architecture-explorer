@@ -34,11 +34,176 @@ Replace `[number]` with the desired number of entities and `[entities]` with the
 Write Mermaid syntax for an ER diagram for an online learning platform's database.
 ```
 
+**Sample Output 1:**
+
+```
+erDiagram
+    USERS ||..|| ENROLLMENTS : has
+    USERS ||--|| SUBMISSIONS : submits
+    COURSES ||--|| LESSONS : contains
+    COURSES ||..|| ENROLLMENTS : has
+    LESSONS ||--|| ASSESSMENTS : includes
+    ASSESSMENTS ||--|| SUBMISSIONS : receives
+
+    USERS {
+        int id
+        string email
+        string password
+        string firstName
+        string lastName
+        string userType
+    }
+
+    COURSES {
+        int id
+        string title
+        string description
+        string category
+        int creatorId
+    }
+
+    LESSONS {
+        int id
+        string title
+        string content
+        int courseId
+    }
+
+    ENROLLMENTS {
+        int id
+        int userId
+        int courseId
+        date enrolledAt
+    }
+
+    ASSESSMENTS {
+        int id
+        string type
+        string question
+        string correctAnswer
+        int lessonId
+    }
+
+    SUBMISSIONS {
+        int id
+        int userId
+        int assessmentId
+        string userAnswer
+        bool isCorrect
+        date submittedAt
+    }
+```
+
+[View on Kroki](https://kroki.io/mermaid/svg/eNqdU1FuwjAM_ecUuQAcYH-M9aMSFInAAULjMUtpAo47hNbdfem6oqSUoc1fjf3y_PziAr2gOpCqJiLETmYbKZpmNmsakRWb9XK5yoqtFE_iTfkEMp0GiNw9r3Ip83XRQny9r5A72GK928jsClxmUnag0llWaIeoXzr2d3-o5jLckD0IbWlqDR0yLo0qJCgB3wM6GuXj-7sNtCxQX4-eCe1BQKXQDJNH5f3Z0Q34FclzoSoYFowaz9ceaHs5dvnPSeLKI2WMbG4Igxcl4ZHR2WGpVAwHR5eEtiRQ7CjXsYLe8n8paF8YLKddXE0e0ibxa99t1B5bj3J9n68NHWYTYMkZA3rOcZ94Kx4O1D9FlDvV4EftdBT2iefWn4ESXgPeO5tOGy_iX6cNyxYYq2BqrscWaCBh75wR6BedvtSi7h_lyKMvO20YYQ)
+
 **Sample Prompt 2:**
 
 ```
 Improve this as a senior edtech data scientist.
 ```
+
+**Sample Output 2:**
+
+```
+erDiagram
+    USERS ||..|| ENROLLMENTS : has
+    USERS ||--|| SUBMISSIONS : submits
+    USERS ||--|| FORUM_POSTS : posts
+    USERS ||--|{ INSTRUCTORS : is_a
+    COURSES ||--|| LESSONS : contains
+    COURSES ||..|| ENROLLMENTS : has
+    COURSES ||..|{ COURSE_CATEGORIES : belongs_to
+    COURSES ||..|| INSTRUCTORS : taught_by
+    COURSES ||--|| DISCUSSION_FORUMS : has
+    LESSONS ||--|| ASSESSMENTS : includes
+    LESSONS ||..|| COURSE_PROGRESS : tracks
+    ASSESSMENTS ||--|| SUBMISSIONS : receives
+    DISCUSSION_FORUMS ||--|| FORUM_POSTS : contains
+
+    USERS {
+        int id
+        string email
+        string password
+        string firstName
+        string lastName
+        string userType
+    }
+
+    INSTRUCTORS {
+        int userId
+        string bio
+        string expertise
+    }
+
+    COURSE_CATEGORIES {
+        int id
+        string name
+        string description
+    }
+
+    COURSES {
+        int id
+        string title
+        string description
+        int categoryId
+        int instructorId
+    }
+
+    LESSONS {
+        int id
+        string title
+        string content
+        int courseId
+    }
+
+    ENROLLMENTS {
+        int id
+        int userId
+        int courseId
+        date enrolledAt
+    }
+
+    COURSE_PROGRESS {
+        int id
+        int userId
+        int lessonId
+        bool completed
+        date lastAccessed
+    }
+
+    ASSESSMENTS {
+        int id
+        string type
+        string question
+        string correctAnswer
+        int lessonId
+    }
+
+    SUBMISSIONS {
+        int id
+        int userId
+        int assessmentId
+        string userAnswer
+        bool isCorrect
+        date submittedAt
+    }
+
+    DISCUSSION_FORUMS {
+        int id
+        int courseId
+        string title
+    }
+
+    FORUM_POSTS {
+        int id
+        int userId
+        int forumId
+        string content
+        date postedAt
+    }
+```
+
+[View on Kroki](https://kroki.io/mermaid/svg/eNqdVdtunDAQfe9X8APJB_SNEhoh7UKE4RkZdkKsGJvapulqt_9em5tsTLLa-gnM8Zkzc2YMiCeCW4G7b4FeJYpzFFyvj4_XaxCneXY4HOO0QMH34A1LB_LwoCGo_HFMEEqy1EDkUHdE7cB-Znl5rF4yNDL1XPqgS5CkqMjLqMhyAyKywiMmysocxSvVIUZoitZwpjBhcoP6QroDusyvVRQW8XOWJ7GB1kA5a2Wl-B6tK1HhoX1TVX3e0_mUoKgcK1ON2ds6lhxmaIj0ObSIJayhwwm2yDH-rPglz55z_cVoELh5n7A2za49Ahogv2dmX9-uV2uRLb8u47NZhKmAnNZXqQRhbQAdJnS72WMpP7jwwK9ESJXiDrYfKN7fHySI4txP-38nXbYvrjqDTrygNeGe6D89CEWkw-t3yK3c2Y5ibWYjSK8IZz75bUpFFL3JuRxvsIKWi7OV88jK9LmhUXwpxqxh6a__0mB6A5hy4_NBSHCD2MP4aaAdszw-s046wQCY4JTCKVQ7bq3TcW8sClJyZm3WnFOtoOspKNhIMO0ZNo0-Ak6y9hTerOrSxtberwGk4-pabKHnV4VMfoD4XPaswh78e8ugB1UzdtpZf3AMfCNhLBKR0aTPLdL0Q1Bbo_y750uNXg94TTnz2lfXvVm_cjF0foxtj49pmR-YldM_Ehf7Ww)
 
 **Sample Prompt 3:**
 
