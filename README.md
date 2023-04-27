@@ -1,6 +1,6 @@
 # Data Architecture
 
-This repository contains a series of prompt templates designed to help you design the data architecture of various platforms using Generative AI tools like ChatGPT, and then create dummy data in Python to experiment with. The prompts guide you through designing the database, writing mermaid.js syntax, improving the design, and generating contextually appropriate dummy data for the platform.
+This repository contains a series of prompt templates designed to help you design the data architecture of various platforms using Generative AI tools like ChatGPT and then create dummy data in Python to experiment with. The prompts guide you through designing the database, writing mermaid.js syntax, improving the design, and generating contextually appropriate dummy data for the platform.
 
 ## Prompt Templates
 
