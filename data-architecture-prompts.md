@@ -3,7 +3,7 @@
 **Prompt 1:**
 
 ```
-Write Mermaid code for an ER diagram for [database].
+Write Mermaid syntax for an ER diagram for [database].
 ```
 Replace `[database]` with the desired platform or project for which you want to create an ER diagram.
 
